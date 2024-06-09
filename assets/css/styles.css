@@ -45,6 +45,7 @@
 
 .scroll-top-btn {
   position: fixed;
+  z-index: 999;
   bottom: 20px;
   right: 20px;
   width: 40px;
@@ -462,8 +463,6 @@ img {
 
 .about__img-container {
   justify-self: center;
-  perspective: 1000px;
-  cursor: pointer;
 }
 
 .about__img {
@@ -475,7 +474,6 @@ img {
   width: 300px;
   border-radius: 50%;
   transition: transform 0.1s ease;
-  transform-style: preserve-3d;
 }
 
 /* ===== SKILLS =====*/
@@ -741,14 +739,11 @@ img {
 
   .about__img-container {
     justify-self: center;
-    perspective: 1000px;
-    cursor: pointer;
   }
 
   .about__img img {
     width: 300px;
     transition: transform 0.1s ease;
-    transform-style: preserve-3d;
   }
 
 
