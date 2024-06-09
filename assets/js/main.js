@@ -122,37 +122,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-
-document.addEventListener("DOMContentLoaded", function() {
-    const aboutImgContainer = document.querySelector(".about__img");
-
-    aboutImgContainer.addEventListener("mousemove", function(event) {
-        const rect = aboutImgContainer.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const deltaX = (x - centerX) / centerX;
-        const deltaY = (y - centerY) / centerY;
-
-        const maxTilt = 15; 
-
-        const tiltX = maxTilt * deltaY;
-        const tiltY = -maxTilt * deltaX;
-
-        aboutImgContainer.querySelector('img').style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
-    });
-
-    aboutImgContainer.addEventListener("mouseleave", function() {
-        aboutImgContainer.querySelector('img').style.transform = "rotateX(0deg) rotateY(0deg)";
-    });
-});
- 
-
-
 const scrollTopButton = document.querySelector('.scroll-top-btn');
 
 
