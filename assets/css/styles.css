@@ -29,9 +29,10 @@
   --z-back: -10;
   --z-fixed: 100;
 }
+
 /* Untuk scrollbar di Chrome, Edge, dan Safari */
 *::-webkit-scrollbar {
-  width: 5px; 
+  width: 5px;
 }
 
 *::-webkit-scrollbar-track {
@@ -40,7 +41,7 @@
 
 *::-webkit-scrollbar-thumb {
   border-radius: 0;
-  background-color: var(--first-color); 
+  background-color: var(--first-color);
 }
 
 .scroll-top-btn {
@@ -63,6 +64,7 @@
 .scroll-top-btn:hover {
   opacity: 0.8;
 }
+
 @media screen and (min-width: 968px) {
   :root {
     --big-font-size: 3.5rem;
@@ -492,45 +494,64 @@ img {
   height: 100px;
   border-radius: 0.5rem;
   /* box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15); */
-  opacity: 0; /* Start with hidden boxes */
-  transform: translateY(-20px); /* Start position above */
+  opacity: 0;
+  /* Start with hidden boxes */
+  transform: translateY(-20px);
+  /* Start position above */
   animation: fadeInFromTop 1s forwards ease-in-out;
 }
 
 /* Individual animation delays */
 .skills__box:nth-child(1) {
-  animation-delay: 0.2s;
+  animation-delay: 0.1s;
 }
 
 .skills__box:nth-child(2) {
-  animation-delay: 0.4s;
+  animation-delay: 0.2s;
 }
 
 .skills__box:nth-child(3) {
-  animation-delay: 0.6s;
+  animation-delay: 0.3s;
 }
 
 .skills__box:nth-child(4) {
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
+}
+
+.skills__box:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.skills__box:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.skills__box:nth-child(7) {
+  animation-delay: 0.7s;
 }
 
 .skills__icon {
   font-size: 3rem;
   /* color: var(--first-color); */
 }
+
 .skills__box:hover .skills__icon {
   transform: translateY(-10px);
-  color: var(--first-color); /* Change icon color on hover */
+  color: var(--first-color);
+  /* Change icon color on hover */
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .skills__container {
     flex-direction: row;
-    align-items: center; /* Center items on mobile */
+    align-items: center;
+    /* Center items on mobile */
     gap: 1rem;
   }
-  .theme, .theme-color {
+
+  .theme,
+  .theme-color {
     color: var(--bg-color);
   }
 
@@ -542,6 +563,7 @@ img {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -549,23 +571,125 @@ img {
 }
 
 
-/* ===== PORTO =====*/
+/* Styling for Portfolio Section */
+
+/* Container for portfolio cards */
+/* Styling for Portfolio Section */
+
+/* Container for portfolio cards */
 .porto__container {
-  row-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 1rem; /* Padding for spacing */
 }
 
-.porto__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: 0.5rem;
+/* Individual card styles */
+.card {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   overflow: hidden;
+  transition: transform 0.2s;
 }
 
-.porto__img img {
-  transition: 1s;
+/* Image styling within the card */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.porto__img img:hover {
-  transform: scale(1.1);
+/* Styling for the card body (title and text) */
+.card-body {
+  padding: 15px;
+}
+
+/* Title styling */
+.card-title {
+  font-size: 1.25em;
+  margin-bottom: 10px;
+}
+
+/* Text styling */
+.card-text {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Overlay styling */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: height 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-content {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay-icon {
+  font-size: 3rem;
+  color: #ffff;
+}
+.card:hover .overlay {
+  height: 100%; /* Display overlay on hover */
+  cursor: pointer;
+}
+
+.card:hover .overlay .overlay-content {
+  opacity: 1; /* Fade in overlay content on hover */
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* For screens wider than 576px (small tablets and up) */
+@media screen and (min-width: 576px) {
+  .porto__container {
+    justify-content: space-between; /* Spacing between cards */
+  }
+
+  .card {
+    width: calc(50% - 10px); /* Calculate width of each card with margin */
+  }
+}
+
+/* For screens wider than 768px (tablets and up) */
+@media screen and (min-width: 768px) {
+  .porto__container {
+    padding: 0 2rem; /* Adjust padding as needed */
+  }
+
+  .card {
+    width: calc(50% - 20px); /* Calculate width of each card with margin */
+  }
+}
+
+/* For screens wider than 992px (desktop screens and up) */
+@media screen and (min-width: 992px) {
+  .porto__container {
+    padding: 0 2rem; /* Adjust padding as needed */
+  }
+
+  .card {
+    width: calc(50% - 20px); /* Calculate width of each card with margin */
+  }
 }
 
 /* ===== CONTACT =====*/
